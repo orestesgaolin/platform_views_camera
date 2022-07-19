@@ -1,0 +1,49 @@
+name: camera_view
+description: A Very Good Project created by Very Good CLI.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+  flutter: ">=3.0.0"
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        default_package: camera_view_android
+      ios:
+        default_package: camera_view_ios
+      linux:
+        default_package: camera_view_linux
+      macos:
+        default_package: camera_view_macos
+      web:
+        default_package: camera_view_web
+      windows:
+        default_package: camera_view_windows
+
+dependencies:
+  flutter:
+    sdk: flutter
+  camera_view_android:
+    path: ../camera_view_android
+  camera_view_ios:
+    path: ../camera_view_ios
+  camera_view_linux:
+    path: ../camera_view_linux
+  camera_view_macos:
+    path: ../camera_view_macos
+  camera_view_platform_interface:
+    path: ../camera_view_platform_interface
+  camera_view_web:
+    path: ../camera_view_web
+  camera_view_windows:
+    path: ../camera_view_windows
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mocktail: ^0.3.0
+  plugin_platform_interface: ^2.0.0
+  very_good_analysis: ^3.0.1
