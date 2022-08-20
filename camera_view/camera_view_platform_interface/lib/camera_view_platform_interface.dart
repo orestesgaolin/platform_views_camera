@@ -1,11 +1,12 @@
-// Copyright (c) 2022, Very Good Ventures
-// https://verygood.ventures
+// Copyright (c) 2022, Dominik Roszkowski
+// https://roszkowski.dev
 //
 // Use of this source code is governed by an MIT-style
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
 import 'package:camera_view_platform_interface/src/method_channel_camera_view.dart';
+import 'package:flutter/widgets.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 /// The interface that implementations of camera_view must implement.
@@ -37,4 +38,7 @@ abstract class CameraViewPlatform extends PlatformInterface {
 
   /// Return the current platform name.
   Future<String?> getPlatformName();
+
+  /// Returns the platform specific widget
+  Widget getPlatformView();
 }

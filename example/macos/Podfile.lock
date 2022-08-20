@@ -1,0 +1,22 @@
+PODS:
+  - camera_view_macos (0.0.1):
+    - FlutterMacOS
+  - FlutterMacOS (1.0.0)
+
+DEPENDENCIES:
+  - camera_view_macos (from `Flutter/ephemeral/.symlinks/plugins/camera_view_macos/macos`)
+  - FlutterMacOS (from `Flutter/ephemeral`)
+
+EXTERNAL SOURCES:
+  camera_view_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/camera_view_macos/macos
+  FlutterMacOS:
+    :path: Flutter/ephemeral
+
+SPEC CHECKSUMS:
+  camera_view_macos: 84b0eab6c04d44b38eb9fd4ab16cb9c742f81d66
+  FlutterMacOS: 85f90bfb3f1703249cf1539e4dfbff31e8584698
+
+PODFILE CHECKSUM: a884f6dd3f7494f3892ee6c81feea3a3abbf9153
+
+COCOAPODS: 1.11.3
