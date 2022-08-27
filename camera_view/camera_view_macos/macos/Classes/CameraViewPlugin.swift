@@ -40,24 +40,3 @@ class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
         return NSHostingView(rootView: CameraView())
     }
 }
-
-@available(macOS 11.00, *)
-class FLNativeView: NSView {
-    init(
-        frame: CGRect,
-        viewIdentifier viewId: Int64,
-        arguments args: Any?,
-        binaryMessenger messenger: FlutterBinaryMessenger?
-    ) {
-        super.init(frame: frame)
-        super.wantsLayer = true
-        super.addSubview(NSHostingView(rootView: CameraView()))
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        super.wantsLayer = true
-        super.addSubview(NSHostingView(rootView: CameraView()))
-    }
-}
-
