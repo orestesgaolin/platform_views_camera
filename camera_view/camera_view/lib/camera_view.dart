@@ -6,11 +6,7 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:camera_view_platform_interface/camera_view_platform_interface.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 
 CameraViewPlatform get _platform => CameraViewPlatform.instance;
 
