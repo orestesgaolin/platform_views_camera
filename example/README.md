@@ -18,4 +18,23 @@ You will see the following directories:
   - `camera_view_platform_interface` - a common platform interface for the `camera_view` plugin
   - `camera_view_xxx` - platform implementations of the plugin
 
-Try it out with running the example app on your desired device (iOS, Android, or macOS).
+Try it out by running the example app on your desired device (iOS, Android, or macOS).
+
+## Camera details
+
+This sample hosts camera previews on the following platforms:
+
+| Platform | Support |
+| -------- | ------- |
+| iOS      | Yes     |
+| Android  | Yes     |
+| macOS    | Yes     |
+| Windows  | No      |
+| Linux    | No      |
+| Web      | No      |
+
+The iOS and macOS implementations use SwiftUI camera views from [this article](https://www.raywenderlich.com/26244793-building-a-camera-app-with-swiftui-and-combine) by Yono Mittlefehldt. The license note is included in every file copied from the original implementation.
+
+## Contributing
+
+Contributions are welcome! If you'd like to improve existing implementation or propose new platform to be supported, please go ahead!
