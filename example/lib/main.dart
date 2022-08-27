@@ -32,7 +32,7 @@ class MyHomePage extends StatelessWidget {
             Text('Hello From Flutter'),
             Center(
               child: FractionallySizedBox(
-                heightFactor: 0.5,
+                heightFactor: 0.75,
                 child: NativeView(),
               ),
             ),
