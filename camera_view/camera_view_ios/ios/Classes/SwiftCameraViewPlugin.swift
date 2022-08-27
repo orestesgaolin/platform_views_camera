@@ -2,7 +2,7 @@ import SwiftUI
 import Flutter
 import UIKit
 
-@available(iOS 13.0, *)
+@available(iOS 14.0, *)
 public class SwiftCameraViewPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "camera_view_ios", binaryMessenger: registrar.messenger())
@@ -23,7 +23,7 @@ public class SwiftCameraViewPlugin: NSObject, FlutterPlugin {
   }
 }
 
-@available(iOS 13.0, *)
+@available(iOS 14.0, *)
 class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
     private var messenger: FlutterBinaryMessenger
 
@@ -45,7 +45,7 @@ class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
     }
 }
 
-@available(iOS 13.0, *)
+@available(iOS 14.0, *)
 class FLNativeView: NSObject, FlutterPlatformView {
     private var _view: UIView
 
@@ -57,7 +57,6 @@ class FLNativeView: NSObject, FlutterPlatformView {
     ) {
         _view = UIView()
         super.init()
-        // iOS views can be created here
         _view.backgroundColor = UIColor.gray
         let childView = UIHostingController(rootView: SwiftUIView())
         childView.view.frame = frame
@@ -70,6 +69,7 @@ class FLNativeView: NSObject, FlutterPlatformView {
     }
 }
 
+@available(iOS 14.0, *)
 extension UIView {
     func addConstrained(subview: UIView) {
         addSubview(subview)

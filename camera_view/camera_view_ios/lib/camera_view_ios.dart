@@ -29,30 +29,28 @@ class CameraViewIOS extends CameraViewPlatform {
 
   @override
   Widget getPlatformView() {
-    return const UiKitBox();
+    return const _UiKitBox();
   }
 }
 
-class UiKitBox extends StatelessWidget {
-  const UiKitBox({super.key});
+class _UiKitBox extends StatelessWidget {
+  const _UiKitBox({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // This is used in the platform side to register the view.
+// This is used in the platform side to register the view.
     const viewType = '@views/native-view';
-    // Pass parameters to the platform side.
-    final creationParams = <String, dynamic>{};
 
-    return UiKitView(
+    return const UiKitView(
       viewType: viewType,
       layoutDirection: TextDirection.ltr,
-      creationParams: creationParams,
-      gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{
+      creationParams: <String, dynamic>{},
+      gestureRecognizers: <Factory<OneSequenceGestureRecognizer>>{
         Factory<OneSequenceGestureRecognizer>(
           EagerGestureRecognizer.new,
         ),
       },
-      creationParamsCodec: const StandardMessageCodec(),
+      creationParamsCodec: StandardMessageCodec(),
     );
   }
 }
