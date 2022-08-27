@@ -4,13 +4,18 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+I recommend opening the whole workspace in VS Code by calling:
 
-A few resources to get you started if this is your first Flutter project:
+```sh
+code .
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+You will see the following directories:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `example` - our application
+- `camera_view` - federated plugin
+  - `camera_view` - Dart implementation of the interface and widgets
+  - `camera_view_platform_interface` - a common platform interface for the `camera_view` plugin
+  - `camera_view_xxx` - platform implementations of the plugin
+
+Try it out with running the example app on your desired device (iOS, Android, or macOS).
