@@ -1,10 +1,14 @@
-# example
+# NativeCameraView
 
 An example of Flutter Platform View plugin that works as a camera.
 
 | Android                                              | iOS                                           | macOS                                            |
 | ---------------------------------------------------- | --------------------------------------------- | ------------------------------------------------ |
 | ![android screenshot](./docs/android_screenshot.png) | ![ios screenshot](./docs/ios_screenshot.jpeg) | ![macos screenshot](./docs/macos_screenshot.png) |
+
+This sample has been presented during Flutter Vikings 2022 conference in Oslo.
+
+If you'd like to learn more about Flutter, feel free to follow me [here](https://roszkowski.dev/).
 
 ## Getting Started
 
