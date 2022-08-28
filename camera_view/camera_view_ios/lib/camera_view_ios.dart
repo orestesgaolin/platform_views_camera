@@ -46,10 +46,13 @@ class CameraViewIOS extends CameraViewPlatform {
   Future<void> toggle() {
     return methodChannel.invokeMethod<String>('toggle');
   }
+
+  @override
+  bool get isToggleSupported => false;
 }
 
 class _UiKitBox extends StatelessWidget {
-  const _UiKitBox({super.key});
+  const _UiKitBox();
 
   @override
   Widget build(BuildContext context) {

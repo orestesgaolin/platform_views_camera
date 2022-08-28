@@ -5,6 +5,8 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+// ignore_for_file: public_member_api_docs
+
 import 'package:camera_view_platform_interface/camera_view_platform_interface.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
@@ -47,6 +49,9 @@ class CameraViewMacOS extends CameraViewPlatform {
   Future<void> toggle() {
     return methodChannel.invokeMethod<String>('toggle');
   }
+
+  @override
+  bool get isToggleSupported => false;
 }
 
 class NSBox extends StatelessWidget {

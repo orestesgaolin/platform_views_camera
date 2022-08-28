@@ -42,6 +42,9 @@ abstract class CameraViewPlatform extends PlatformInterface {
   /// Returns the platform specific widget
   Widget getPlatformView();
 
+  /// Whether toggling of the camera is supported
+  bool get isToggleSupported;
+
   /// Toggles the camera view between front and back camera
   Future<void> toggle();
 

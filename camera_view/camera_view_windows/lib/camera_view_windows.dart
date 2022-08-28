@@ -44,4 +44,7 @@ class CameraViewWindows extends CameraViewPlatform {
   Future<void> toggle() {
     throw UnimplementedError();
   }
+
+  @override
+  bool get isToggleSupported => throw UnimplementedError();
 }

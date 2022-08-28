@@ -23,6 +23,8 @@ Future<String> getPlatformName() async {
 class CameraView extends StatelessWidget {
   const CameraView({super.key});
 
+  static bool get isToggleSupported => _platform.isToggleSupported;
+
   @override
   Widget build(BuildContext context) {
     return _platform.getPlatformView();

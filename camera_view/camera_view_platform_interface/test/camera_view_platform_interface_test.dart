@@ -19,6 +19,19 @@ class CameraViewMock extends CameraViewPlatform {
   Widget getPlatformView() {
     throw UnimplementedError();
   }
+
+  @override
+  bool get isToggleSupported => throw UnimplementedError();
+
+  @override
+  Future<String?> takePicture(String path) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> toggle() {
+    throw UnimplementedError();
+  }
 }
 
 void main() {

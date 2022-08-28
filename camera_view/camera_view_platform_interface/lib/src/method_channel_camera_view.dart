@@ -39,4 +39,7 @@ class MethodChannelCameraView extends CameraViewPlatform {
   Future<void> toggle() {
     return methodChannel.invokeMethod<String>('toggle');
   }
+
+  @override
+  bool get isToggleSupported => false;
 }

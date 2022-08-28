@@ -16,10 +16,10 @@ flutter:
         dartPluginClass: CameraViewMacOS
 
 dependencies:
-  flutter:
-    sdk: flutter
   camera_view_platform_interface:
     path: ../camera_view_platform_interface
+  flutter:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:

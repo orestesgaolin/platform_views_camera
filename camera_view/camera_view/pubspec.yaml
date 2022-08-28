@@ -24,8 +24,6 @@ flutter:
         default_package: camera_view_windows
 
 dependencies:
-  flutter:
-    sdk: flutter
   camera_view_android:
     path: ../camera_view_android
   camera_view_ios:
@@ -40,6 +38,8 @@ dependencies:
     path: ../camera_view_web
   camera_view_windows:
     path: ../camera_view_windows
+  flutter:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
