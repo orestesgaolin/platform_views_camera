@@ -2,9 +2,9 @@
 
 An example of Flutter Platform View plugin that works as a camera.
 
-| Android                                              | iOS                                          | macOS                                            |
-| ---------------------------------------------------- | -------------------------------------------- | ------------------------------------------------ |
-| ![android screenshot](./docs/android_screenshot.png) | ![ios screenshot](./docs/ios_screenshot.png) | ![macos screenshot](./docs/macos_screenshot.png) |
+| Android                                              | iOS                                           | macOS                                            |
+| ---------------------------------------------------- | --------------------------------------------- | ------------------------------------------------ |
+| ![android screenshot](./docs/android_screenshot.png) | ![ios screenshot](./docs/ios_screenshot.jpeg) | ![macos screenshot](./docs/macos_screenshot.png) |
 
 ## Getting Started
 
