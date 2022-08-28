@@ -56,12 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Column(
       children: [
         Expanded(
-          child: Stack(
-            children: [
-              CameraView(),
-              Text('Hello'),
-            ],
-          ),
+          child: CameraView(),
         ),
         DecoratedBox(
           decoration: decoration,
