@@ -61,4 +61,19 @@ class CameraViewAndroid extends CameraViewPlatform {
       },
     );
   }
+
+  @override
+  Future<String?> takePicture(String path) {
+    return methodChannel.invokeMethod<String>(
+      'takePicture',
+      {
+        'filePath': path,
+      },
+    );
+  }
+
+  @override
+  Future<void> toggle() {
+    return methodChannel.invokeMethod<String>('toggle');
+  }
 }

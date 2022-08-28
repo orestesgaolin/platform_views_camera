@@ -41,4 +41,22 @@ abstract class CameraViewPlatform extends PlatformInterface {
 
   /// Returns the platform specific widget
   Widget getPlatformView();
+
+  /// Toggles the camera view between front and back camera
+  Future<void> toggle();
+
+  /// Takes picture with the current camera
+  Future<String?> takePicture(String path);
+}
+
+class CameraController {
+  final CameraViewPlatform _platform = CameraViewPlatform.instance;
+
+  Future<void> toggle() async {
+    await _platform.toggle();
+  }
+
+  Future<String?> takePicture(String path) async {
+    return _platform.takePicture(path);
+  }
 }

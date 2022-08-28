@@ -8,6 +8,9 @@
 import 'package:camera_view_platform_interface/camera_view_platform_interface.dart';
 import 'package:flutter/material.dart';
 
+export 'package:camera_view_platform_interface/camera_view_platform_interface.dart'
+    show CameraController;
+
 CameraViewPlatform get _platform => CameraViewPlatform.instance;
 
 /// Returns the name of the current platform.
@@ -17,8 +20,8 @@ Future<String> getPlatformName() async {
   return platformName;
 }
 
-class NativeView extends StatelessWidget {
-  const NativeView({super.key});
+class CameraView extends StatelessWidget {
+  const CameraView({super.key});
 
   @override
   Widget build(BuildContext context) {

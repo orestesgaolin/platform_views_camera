@@ -31,6 +31,21 @@ class CameraViewMacOS extends CameraViewPlatform {
   Widget getPlatformView() {
     return const NSBox();
   }
+
+  @override
+  Future<String?> takePicture(String path) {
+    return methodChannel.invokeMethod<String>(
+      'takePicture',
+      {
+        'filePath': path,
+      },
+    );
+  }
+
+  @override
+  Future<void> toggle() {
+    return methodChannel.invokeMethod<String>('toggle');
+  }
 }
 
 class NSBox extends StatelessWidget {

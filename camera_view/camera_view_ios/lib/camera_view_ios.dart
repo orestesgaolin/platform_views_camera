@@ -31,6 +31,21 @@ class CameraViewIOS extends CameraViewPlatform {
   Widget getPlatformView() {
     return const _UiKitBox();
   }
+
+  @override
+  Future<String?> takePicture(String path) {
+    return methodChannel.invokeMethod<String>(
+      'takePicture',
+      {
+        'filePath': path,
+      },
+    );
+  }
+
+  @override
+  Future<void> toggle() {
+    return methodChannel.invokeMethod<String>('toggle');
+  }
 }
 
 class _UiKitBox extends StatelessWidget {

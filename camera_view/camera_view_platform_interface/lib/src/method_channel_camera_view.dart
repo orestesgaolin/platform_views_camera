@@ -6,9 +6,7 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:camera_view_platform_interface/camera_view_platform_interface.dart';
-import 'package:flutter/foundation.dart' show visibleForTesting;
 import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
 
 /// An implementation of [CameraViewPlatform] that uses method channels.
@@ -25,5 +23,20 @@ class MethodChannelCameraView extends CameraViewPlatform {
   @override
   Widget getPlatformView() {
     return const SizedBox();
+  }
+
+  @override
+  Future<String?> takePicture(String path) {
+    return methodChannel.invokeMethod<String>(
+      'takePicture',
+      {
+        'filePath': path,
+      },
+    );
+  }
+
+  @override
+  Future<void> toggle() {
+    return methodChannel.invokeMethod<String>('toggle');
   }
 }
