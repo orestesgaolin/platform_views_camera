@@ -1,6 +1,8 @@
 # example
 
-A new Flutter project.
+An example of Flutter Platform View plugin that works as a camera.
+
+![android screenshot](./docs/android_screenshot.png)
 
 ## Getting Started
 
