@@ -2,9 +2,9 @@
 
 An example of Flutter Platform View plugin that works as a camera.
 
-| Android                                              | iOS | macOS |
-| ---------------------------------------------------- | --- | ----- |
-| ![android screenshot](./docs/android_screenshot.png) |     |
+| Android                                              | iOS | macOS                                            |
+| ---------------------------------------------------- | --- | ------------------------------------------------ |
+| ![android screenshot](./docs/android_screenshot.png) |     | ![macos screenshot](./docs/macos_screenshot.png) |
 
 ## Getting Started
 
@@ -38,6 +38,12 @@ This sample hosts camera previews on the following platforms:
 | Web      | No      |
 
 The iOS and macOS implementations use SwiftUI camera views from [this article](https://www.raywenderlich.com/26244793-building-a-camera-app-with-swiftui-and-combine) by Yono Mittlefehldt. The license note is included in every file copied from the original implementation.
+
+### Known issues
+
+- macOS platform views don't handle gestures, throw exceptions when tapping anywhere even when ignoring touch events
+- macOS platform views cannot be shown beneath the Flutter widgets thus there's not way to draw UI on top of the platform view
+-
 
 ## Contributing
 
