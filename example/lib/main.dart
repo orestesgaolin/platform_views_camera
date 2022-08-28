@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:camera_view/camera_view.dart';
+import 'package:example/preview/preview_page.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: Scaffold(body: const MyHomePage()),
     );
   }
 }
@@ -52,58 +53,64 @@ class _MyHomePageState extends State<MyHomePage> {
       gradient: linearGradient,
     );
 
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              child: CameraView(),
-            ),
-            DecoratedBox(
-              decoration: decoration,
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    if (filePath != null)
-                      Image.file(
+    return Column(
+      children: [
+        Expanded(
+          child: Stack(
+            children: [
+              CameraView(),
+              Text('Hello'),
+            ],
+          ),
+        ),
+        DecoratedBox(
+          decoration: decoration,
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: SafeArea(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  if (filePath != null)
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, PreviewPage.route(filePath!));
+                      },
+                      child: Image.file(
                         File(filePath!),
                         width: 30,
                         height: 30,
-                        cacheHeight: 60,
-                        cacheWidth: 60,
                         fit: BoxFit.cover,
-                      )
-                    else
-                      Icon(Icons.image),
-                    ShutterButton(
-                      onPressed: () async {
-                        final path = await getApplicationDocumentsDirectory();
-                        final file =
-                            '${path.path}/image${DateTime.now().millisecondsSinceEpoch}.jpg';
-                        final takenPath =
-                            await cameraController.takePicture(file);
-                        if (takenPath != null) {
-                          setState(() {
-                            filePath = takenPath;
-                          });
-                        }
-                      },
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        cameraController.toggle();
-                      },
-                      icon: Icon(Icons.toggle_on),
-                    ),
-                  ],
-                ),
+                      ),
+                    )
+                  else
+                    Icon(Icons.image),
+                  ShutterButton(
+                    onPressed: () async {
+                      final path = await getApplicationDocumentsDirectory();
+                      final file =
+                          '${path.path}/image${DateTime.now().millisecondsSinceEpoch}.jpg';
+                      final takenPath =
+                          await cameraController.takePicture(file);
+                      if (takenPath != null) {
+                        setState(() {
+                          filePath = takenPath;
+                        });
+                      }
+                    },
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      cameraController.toggle();
+                    },
+                    icon: Icon(Icons.toggle_on),
+                  ),
+                ],
               ),
-            )
-          ],
-        ),
-      ),
+            ),
+          ),
+        )
+      ],
     );
   }
 }

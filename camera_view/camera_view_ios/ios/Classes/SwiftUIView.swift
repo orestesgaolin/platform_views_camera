@@ -11,10 +11,6 @@ import SwiftUI
 struct SwiftUIView: View {
     var body: some View {
         VStack(alignment: .center) {
-            Text("Hello from SwiftUI")
-                .font(.headline)
-            Text("within Flutter")
-                .font(.body)
             ContentView()
         }
     }

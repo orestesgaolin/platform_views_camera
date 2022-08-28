@@ -8,6 +8,7 @@
 import 'package:camera_view_platform_interface/camera_view_platform_interface.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
@@ -58,16 +59,19 @@ class NSBox extends StatelessWidget {
     // Pass parameters to the platform side.
     final creationParams = <String, dynamic>{};
 
-    return UiKitView(
-      viewType: viewType,
-      layoutDirection: TextDirection.ltr,
-      creationParams: creationParams,
-      gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{
-        Factory<OneSequenceGestureRecognizer>(
-          EagerGestureRecognizer.new,
-        ),
-      },
-      creationParamsCodec: const StandardMessageCodec(),
+    return IgnorePointer(
+      child: UiKitView(
+        viewType: viewType,
+        layoutDirection: TextDirection.ltr,
+        creationParams: creationParams,
+        hitTestBehavior: PlatformViewHitTestBehavior.transparent,
+        gestureRecognizers: const <Factory<OneSequenceGestureRecognizer>>{
+          // Factory<OneSequenceGestureRecognizer>(
+          //   EagerGestureRecognizer.new,
+          // ),
+        },
+        creationParamsCodec: const StandardMessageCodec(),
+      ),
     );
   }
 }

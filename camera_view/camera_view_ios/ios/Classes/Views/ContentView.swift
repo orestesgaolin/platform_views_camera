@@ -34,19 +34,19 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 struct ContentView: View {
-  @StateObject private var model = ContentViewModel()
+  @StateObject var cameraModel = ContentViewModel()
 
   var body: some View {
     ZStack {
-      FrameView(image: model.frame)
+      FrameView(image: cameraModel.frame)
         .edgesIgnoringSafeArea(.all)
 
-      ErrorView(error: model.error)
+      ErrorView(error: cameraModel.error)
 
       ControlView(
-        comicSelected: $model.comicFilter,
-        monoSelected: $model.monoFilter,
-        crystalSelected: $model.crystalFilter)
+        comicSelected: $cameraModel.comicFilter,
+        monoSelected: $cameraModel.monoFilter,
+        crystalSelected: $cameraModel.crystalFilter)
     }
   }
 }
