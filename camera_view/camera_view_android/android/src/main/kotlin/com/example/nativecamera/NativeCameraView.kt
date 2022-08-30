@@ -27,7 +27,6 @@ internal class NativeCameraView(
 
     init {
         cameraView = com.otaliastudios.cameraview.CameraView(context)
-        cameraController.setView(cameraView)
 
         cameraView.layoutParams = FrameLayout.LayoutParams(
             FrameLayout.LayoutParams.MATCH_PARENT,
@@ -39,5 +38,6 @@ internal class NativeCameraView(
         cameraView.mapGesture(Gesture.TAP, GestureAction.AUTO_FOCUS); // Tap to focus!
         cameraView.mapGesture(Gesture.LONG_TAP, GestureAction.TAKE_PICTURE);
         cameraView.facing = Facing.FRONT
+        cameraController.setView(cameraView)
     }
 }

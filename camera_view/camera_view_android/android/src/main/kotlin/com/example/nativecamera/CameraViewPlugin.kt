@@ -3,6 +3,7 @@ package com.example.nativecamera
 import android.content.Context
 import android.util.Log
 import androidx.annotation.NonNull
+import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import com.otaliastudios.cameraview.CameraListener
 import com.otaliastudios.cameraview.FileCallback
@@ -66,7 +67,7 @@ class CameraViewPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             .platformViewRegistry
             .registerViewFactory("@views/native-view", NativeViewFactory(controller))
 
-        controller.attachedToActivity(owner)
+        controller.setLifecycleProvider(ProxyLifecycleProvider(binding.activity))
     }
 
     override fun onDetachedFromActivityForConfigChanges() {
@@ -82,7 +83,9 @@ class CameraViewPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     }
 }
 
-class NativeViewFactory(val cameraController: CameraController) :
+class NativeViewFactory(
+    val cameraController: CameraController,
+) :
     PlatformViewFactory(StandardMessageCodec.INSTANCE) {
     override fun create(context: Context, viewId: Int, args: Any?): PlatformView {
         val creationParams = args as Map<String?, Any?>?
@@ -90,15 +93,17 @@ class NativeViewFactory(val cameraController: CameraController) :
     }
 }
 
-class CameraController : CameraListener() {
+class CameraController : CameraListener(), DefaultLifecycleObserver {
     private lateinit var view: com.otaliastudios.cameraview.CameraView
     private val TAG: String = "CameraController"
     private var takePictureFile: File? = null
     private var takePictureResult: MethodChannel.Result? = null
+    private var initialized: Boolean = false
 
     fun setView(view: com.otaliastudios.cameraview.CameraView) {
         this.view = view
         view.addCameraListener(this)
+        initialized = true
     }
 
     override fun onPictureTaken(result: PictureResult) {
@@ -138,7 +143,31 @@ class CameraController : CameraListener() {
         view.takePicture()
     }
 
-    fun attachedToActivity(owner: LifecycleOwner) {
-        view.setLifecycleOwner(owner)
+
+    fun setLifecycleProvider(proxyLifecycleProvider: ProxyLifecycleProvider) {
+        proxyLifecycleProvider.lifecycle.addObserver(
+            this
+        )
+    }
+
+    override fun onPause(owner: LifecycleOwner) {
+        if (!initialized) {
+            return;
+        }
+        view.close()
+    }
+
+    override fun onResume(owner: LifecycleOwner) {
+        if (!initialized) {
+            return;
+        }
+        view.open()
+    }
+
+    override fun onDestroy(owner: LifecycleOwner) {
+        if (!initialized) {
+            return;
+        }
+        view.destroy()
     }
 }
