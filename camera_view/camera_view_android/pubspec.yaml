@@ -12,7 +12,7 @@ flutter:
     implements: camera_view
     platforms:
       android:
-        package: com.example.verygoodcore
+        package: com.example.nativecamera
         pluginClass: CameraViewPlugin
         dartPluginClass: CameraViewAndroid
 

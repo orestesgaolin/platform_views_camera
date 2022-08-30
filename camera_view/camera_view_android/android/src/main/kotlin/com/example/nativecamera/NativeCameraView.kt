@@ -1,4 +1,4 @@
-package com.example.verygoodcore
+package com.example.nativecamera
 
 import android.content.Context
 import android.view.View
@@ -6,8 +6,6 @@ import android.widget.FrameLayout
 import com.otaliastudios.cameraview.controls.Facing
 import com.otaliastudios.cameraview.gesture.Gesture
 import com.otaliastudios.cameraview.gesture.GestureAction
-import io.flutter.embedding.engine.plugins.activity.ActivityAware
-import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import io.flutter.plugin.platform.PlatformView
 
 internal class NativeCameraView(

@@ -1,4 +1,4 @@
-package com.example.verygoodcore
+package com.example.nativecamera
 
 import android.content.Context
 import android.util.Log
