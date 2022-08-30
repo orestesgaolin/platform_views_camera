@@ -6,6 +6,7 @@ import 'package:camera_view/camera_view.dart';
 import 'package:example/preview/preview_page.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 const grey = Color.fromARGB(255, 170, 172, 178);
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Platform View Demo',
+      title: 'Flutter Camera Platform View Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -70,7 +71,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   if (filePath != null)
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(context, PreviewPage.route(filePath!));
+                        Share.shareFiles(
+                          [filePath!],
+                          text: 'Greetings from Flutter Vikings!',
+                        );
+                        // Navigator.push(context, PreviewPage.route(filePath!));
                       },
                       child: Image.file(
                         File(filePath!),
