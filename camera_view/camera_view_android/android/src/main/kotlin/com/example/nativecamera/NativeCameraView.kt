@@ -36,7 +36,6 @@ internal class NativeCameraView(
         cameraView.open()
         cameraView.mapGesture(Gesture.PINCH, GestureAction.ZOOM); // Pinch to zoom!
         cameraView.mapGesture(Gesture.TAP, GestureAction.AUTO_FOCUS); // Tap to focus!
-        cameraView.mapGesture(Gesture.LONG_TAP, GestureAction.TAKE_PICTURE);
         cameraView.facing = Facing.FRONT
         cameraController.setView(cameraView)
     }
