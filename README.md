@@ -45,6 +45,8 @@ This sample hosts camera previews on the following platforms:
 
 The iOS and macOS implementations use SwiftUI camera views from [this article](https://www.raywenderlich.com/26244793-building-a-camera-app-with-swiftui-and-combine) by Yono Mittlefehldt. The license note is included in every file copied from the original implementation.
 
+The Android implementation uses [CameraView library](https://github.com/natario1/CameraView), which worked perfectly fine for this sample.
+
 ### Known issues
 
 - macOS platform views don't handle gestures, throw exceptions when tapping anywhere even when ignoring touch events
