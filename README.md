@@ -1,6 +1,6 @@
 # NativeCameraView
 
-An example of Flutter Platform View plugin that works as a camera.
+An example of Flutter Platform View plugin that works as a camera preview and capture.
 
 | Android                                              | iOS                                           | macOS                                            |
 | ---------------------------------------------------- | --------------------------------------------- | ------------------------------------------------ |
@@ -11,6 +11,8 @@ This sample has been presented during Flutter Vikings 2022 conference in Oslo.
 If you'd like to learn more about Flutter, feel free to follow me [here](https://roszkowski.dev/).
 
 ## Getting Started
+
+Make sure to use a recent `master` version of Flutter (e.g. `3.5.0-10.0.pre.36`).
 
 I recommend opening the whole workspace in VS Code by calling:
 
@@ -26,7 +28,7 @@ You will see the following directories:
   - `camera_view_platform_interface` - a common platform interface for the `camera_view` plugin
   - `camera_view_xxx` - platform implementations of the plugin
 
-Try it out by running the example app on your desired device (iOS, Android, or macOS).
+Try it out by running the example app on your desired device (iOS, Android, or macOS). There's VS Code launch configuration available.
 
 ## Camera details
 
@@ -47,7 +49,7 @@ The iOS and macOS implementations use SwiftUI camera views from [this article](h
 
 - macOS platform views don't handle gestures, throw exceptions when tapping anywhere even when ignoring touch events
 - macOS platform views cannot be shown beneath the Flutter widgets thus there's not way to draw UI on top of the platform view
--
+- window resizing on macOS is broken due to [this threading issue](https://github.com/flutter/engine/pull/35894)
 
 ## Contributing
 
