@@ -30,11 +30,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   camera_view_macos: 02647cc9ce17df745f6c92fb651e246e1c5bd8c0
-  FlutterMacOS: 85f90bfb3f1703249cf1539e4dfbff31e8584698
+  FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
   path_provider_macos: 3c0c3b4b0d4a76d2bf989a913c2de869c5641a19
   share_plus_macos: 853ee48e7dce06b633998ca0735d482dd671ade4
   url_launcher_macos: 597e05b8e514239626bcf4a850fcf9ef5c856ec3
 
-PODFILE CHECKSUM: a884f6dd3f7494f3892ee6c81feea3a3abbf9153
+PODFILE CHECKSUM: 353c8bcc5d5b0994e508d035b5431cfe18c1dea7
 
 COCOAPODS: 1.11.3
