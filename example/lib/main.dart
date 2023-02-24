@@ -6,7 +6,6 @@ import 'package:camera_view/camera_view.dart';
 import 'package:example/preview/preview_page.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:share_plus/share_plus.dart';
 
 const grey = Color.fromARGB(255, 170, 172, 178);
 
@@ -57,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Column(
       children: [
         Expanded(
+          // child: SizedBox(),
           child: CameraView(),
         ),
         DecoratedBox(
@@ -71,11 +71,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   if (filePath != null)
                     GestureDetector(
                       onTap: () {
-                        Share.shareFiles(
-                          [filePath!],
-                          text: 'Greetings from Flutter Vikings!',
-                        );
-                        // Navigator.push(context, PreviewPage.route(filePath!));
+                        // Share.shareFiles(
+                        //   [filePath!],
+                        //   text: 'Greetings from Flutter Vikings!',
+                        // );
+                        Navigator.push(context, PreviewPage.route(filePath!));
                       },
                       child: Image.file(
                         File(filePath!),

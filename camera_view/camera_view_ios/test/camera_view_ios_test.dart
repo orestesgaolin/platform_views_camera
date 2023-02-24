@@ -22,7 +22,7 @@ void main() {
       cameraView = CameraViewIOS();
 
       log = <MethodCall>[];
-      TestDefaultBinaryMessengerBinding.instance!.defaultBinaryMessenger
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
           .setMockMethodCallHandler(cameraView.methodChannel,
               (methodCall) async {
         log.add(methodCall);
